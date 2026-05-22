@@ -5,8 +5,8 @@ const release = {
   year: 2026,
   month: 5,
   day: 22,
-  hour: 9,
-  minute: 25
+  hour: 20,
+  minute: 11
 
 };
 
@@ -167,7 +167,7 @@ async function updateCountdown(){
       false;
 
       enterButton.innerText =
-      "abrir caderno ♡";
+      "abrir carta ♡";
 
       enterButton.classList.add(
         'active'
