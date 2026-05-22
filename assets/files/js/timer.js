@@ -5,8 +5,8 @@ const release = {
   year: 2026,
   month: 5,
   day: 22,
-  hour: 10,
-  minute: 47
+  hour: 20,
+  minute: 14
 
 };
 
