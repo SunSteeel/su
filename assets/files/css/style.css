@@ -1,0 +1,659 @@
+/* style.css */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+
+  font-family:'Patrick Hand', cursive;
+
+  background:#eaf4ff;
+
+  overflow:hidden;
+
+  color:#4a607c;
+}
+
+
+
+.background-blur{
+
+  position:fixed;
+
+  inset:0;
+
+  background:
+
+  radial-gradient(
+    circle at top left,
+    #dceeff 0%,
+    #cde7ff 35%,
+    #bddfff 70%,
+    #b3d9ff 100%
+  );
+
+  z-index:-1;
+}
+
+
+.loader-container{
+
+  width:100%;
+
+  height:100vh;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  padding:20px;
+}
+
+
+
+.paper-card{
+
+  width:700px;
+
+  max-width:100%;
+
+  background:
+  rgba(255,255,255,0.75);
+
+  backdrop-filter:blur(10px);
+
+  border-radius:35px;
+
+  padding:60px;
+
+  text-align:center;
+
+  box-shadow:
+  0 10px 40px rgba(0,0,0,0.08);
+
+  transform:rotate(-1deg);
+
+  position:relative;
+}
+
+
+
+.small-text{
+
+  color:#7da3ca;
+
+  letter-spacing:3px;
+
+  font-size:1rem;
+}
+
+.paper-card h1{
+
+  font-size:5rem;
+
+  color:#5c82b0;
+
+  margin-top:10px;
+
+  font-family:'Caveat', cursive;
+}
+
+.description{
+
+  margin-top:10px;
+
+  font-size:1.3rem;
+}
+
+
+
+#countdown{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:20px;
+
+  flex-wrap:wrap;
+
+  margin-top:40px;
+}
+
+.time-box{
+
+  width:120px;
+
+  height:120px;
+
+  background:
+  rgba(255,255,255,0.7);
+
+  border-radius:25px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:center;
+
+  box-shadow:
+  0 5px 20px rgba(0,0,0,0.06);
+}
+
+.time-box span{
+
+  font-size:2.8rem;
+
+  color:#5d85b4;
+
+  font-weight:bold;
+}
+
+.time-box small{
+
+  color:#7da3ca;
+
+  font-size:1rem;
+
+  margin-top:5px;
+}
+
+
+.progress-bar{
+
+  width:100%;
+
+  height:14px;
+
+  background:#d8e9fb;
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  margin-top:45px;
+}
+
+
+
+
+
+.bottom-text{
+
+  margin-top:30px;
+
+  color:#89a9c9;
+
+  font-size:1rem;
+}
+
+
+@media(max-width:768px){
+
+  .paper-card{
+
+    padding:35px;
+  }
+
+  .paper-card h1{
+
+    font-size:3.8rem;
+  }
+
+  .time-box{
+
+    width:90px;
+    height:90px;
+  }
+
+  .time-box span{
+
+    font-size:2rem;
+  }
+
+}
+
+
+
+main{
+  opacity:0;
+  transition:2s ease;
+}
+
+
+
+.site-visible main{
+  opacity:1;
+}
+
+
+
+
+#enterButton{
+
+  margin-top:30px;
+
+  border:none;
+
+  background:#9ecfff;
+
+  color:white;
+
+  padding:14px 28px;
+
+  border-radius:20px;
+
+  font-size:1rem;
+
+  cursor:not-allowed;
+
+  transition:0.4s ease;
+
+  font-family:'Patrick Hand', cursive;
+}
+
+
+#enterButton.active{
+
+  background:#6fb4ff;
+
+  cursor:pointer;
+
+  transform:scale(1.02);
+}
+
+#enterButton.active:hover{
+
+  transform:scale(1.06);
+}
+
+
+main{
+
+  opacity:0;
+
+  transition:2s ease;
+}
+
+
+.site-visible main{
+
+  opacity:1;
+}
+
+
+
+
+
+.paper-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  border-radius:35px;
+
+  background:
+
+  repeating-linear-gradient(
+
+    0deg,
+
+    rgba(0,0,0,0.012),
+    rgba(0,0,0,0.012) 1px,
+
+    transparent 1px,
+    transparent 4px
+
+  );
+
+  pointer-events:none;
+
+  opacity:0.5;
+}
+
+
+.paper-card::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:320px;
+  height:320px;
+
+  background:#bfe1ff;
+
+  border-radius:50%;
+
+  filter:blur(90px);
+
+  opacity:0.35;
+
+  top:-100px;
+  left:-80px;
+
+  z-index:-1;
+
+  animation:
+  glowMove 8s ease-in-out infinite alternate;
+}
+
+
+
+.paper-card{
+
+  animation:
+  floating 6s ease-in-out infinite;
+}
+
+
+
+.time-box{
+
+  transition:
+  transform 0.35s ease,
+  box-shadow 0.35s ease;
+}
+
+.time-box:hover{
+
+  transform:
+  translateY(-6px)
+  scale(1.03);
+
+  box-shadow:
+  0 15px 35px rgba(0,0,0,0.08);
+}
+
+
+.time-box span{
+
+  text-shadow:
+  0 2px 10px rgba(120,170,220,0.25);
+}
+
+
+
+#enterButton{
+
+  box-shadow:
+  0 10px 25px rgba(120,180,255,0.25);
+
+  letter-spacing:1px;
+}
+
+#enterButton.active:hover{
+
+  transform:
+  translateY(-2px)
+  scale(1.06);
+
+  box-shadow:
+  0 15px 35px rgba(120,180,255,0.35);
+}
+
+
+.hero{
+
+  width:100%;
+
+  min-height:100vh;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  padding:40px;
+}
+
+.hero-card{
+
+  width:750px;
+
+  max-width:100%;
+
+  background:
+  rgba(255,255,255,0.72);
+
+  backdrop-filter:blur(12px);
+
+  border-radius:40px;
+
+  padding:70px;
+
+  text-align:center;
+
+  box-shadow:
+  0 15px 50px rgba(0,0,0,0.08);
+
+  position:relative;
+
+  animation:
+  floating 7s ease-in-out infinite;
+}
+
+
+.mini{
+
+  color:#8ab1d8;
+
+  letter-spacing:3px;
+
+  text-transform:uppercase;
+
+  font-size:0.9rem;
+}
+
+
+
+.hero-card h1{
+
+  font-family:'Caveat', cursive;
+
+  font-size:5rem;
+
+  margin-top:15px;
+
+  color:#5d84b1;
+}
+
+
+.hero-card p{
+
+  margin-top:15px;
+
+  font-size:1.4rem;
+
+  color:#6d89a9;
+}
+
+
+
+@keyframes floating{
+
+  0%{
+
+    transform:
+    translateY(0px)
+    rotate(-1deg);
+
+  }
+
+  50%{
+
+    transform:
+    translateY(-8px)
+    rotate(-1deg);
+
+  }
+
+  100%{
+
+    transform:
+    translateY(0px)
+    rotate(-1deg);
+
+  }
+
+}
+
+
+
+@keyframes glowMove{
+
+  0%{
+
+    transform:
+    translateX(0px)
+    translateY(0px);
+
+  }
+
+  100%{
+
+    transform:
+    translateX(60px)
+    translateY(40px);
+
+  }
+
+}
+
+
+
+@media(max-width:768px){
+
+  .hero-card{
+
+    padding:40px;
+  }
+
+  .hero-card h1{
+
+    font-size:3.7rem;
+  }
+
+  .hero-card p{
+
+    font-size:1.1rem;
+  }
+
+}
+
+
+
+
+@keyframes initialFade{
+
+  from{
+
+    opacity:0;
+  }
+
+  to{
+
+    opacity:1;
+  }
+
+}
+
+
+
+@keyframes initialCard{
+
+  0%{
+
+    opacity:0;
+
+    transform:
+    translateY(40px)
+    scale(0.92)
+    rotate(-1deg);
+
+    filter:
+    blur(10px);
+
+  }
+
+  100%{
+
+    opacity:1;
+
+    transform:
+    translateY(0px)
+    scale(1)
+    rotate(-1deg);
+
+    filter:
+    blur(0px);
+
+  }
+
+}
+
+
+
+.pages{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:20px;
+
+  flex-wrap:wrap;
+
+  margin-top:40px;
+}
+
+
+
+.page-btn{
+
+  text-decoration:none;
+
+  color:white;
+
+  background:#8fc7ff;
+
+  padding:16px 28px;
+
+  border-radius:22px;
+
+  font-size:1.1rem;
+
+  transition:
+  transform 0.35s ease,
+  box-shadow 0.35s ease,
+  background 0.35s ease;
+
+  box-shadow:
+  0 10px 25px rgba(120,180,255,0.22);
+}
+
+
+
+.page-btn:hover{
+
+  background:#79bbff;
+
+  transform:
+  translateY(-4px)
+  scale(1.04);
+
+  box-shadow:
+  0 18px 40px rgba(120,180,255,0.30);
+}

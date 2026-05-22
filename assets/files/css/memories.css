@@ -1,0 +1,638 @@
+/* memories.css */
+
+body{
+
+  margin:0;
+
+  font-family:'Patrick Hand', cursive;
+
+  background:#eaf4ff;
+
+  overflow-x:hidden;
+
+  color:#4a607c;
+}
+
+
+
+.background-blur{
+
+  position:fixed;
+
+  inset:0;
+
+  background:
+  radial-gradient(
+    circle at top left,
+    #dceeff 0%,
+    #cde7ff 35%,
+    #bddfff 70%,
+    #b3d9ff 100%
+  );
+
+  z-index:-2;
+}
+
+
+
+.hero{
+
+  width:100%;
+
+  min-height:100vh;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:flex-start;
+
+  padding:55px 20px;
+}
+
+
+
+.hero-card{
+
+  width:920px;
+
+  max-width:100%;
+
+  background:
+  rgba(255,255,255,0.76);
+
+  border-radius:42px;
+
+  padding:38px;
+
+  position:relative;
+
+  overflow:visible;
+
+  box-shadow:
+  0 20px 60px rgba(0,0,0,0.08);
+}
+
+
+
+.hero-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:420px;
+  height:420px;
+
+  background:#c7e5ff;
+
+  border-radius:50%;
+
+  opacity:0.22;
+
+  top:-160px;
+  right:-120px;
+
+  z-index:-1;
+
+  box-shadow:
+  0 0 180px 120px #c7e5ff;
+}
+
+
+.mini{
+
+  color:#8ab1d8;
+
+  letter-spacing:3px;
+
+  font-size:0.82rem;
+}
+
+
+.hero-card h1{
+
+  margin-top:10px;
+  margin-bottom:8px;
+
+  font-size:4.6rem;
+
+  color:#5b84b1;
+
+  line-height:1;
+
+  font-family:'Caveat', cursive;
+}
+
+
+
+.hero-card > p{
+
+  margin-top:0;
+
+  color:#6f8baa;
+
+  font-size:1.1rem;
+}
+
+
+
+.memory-columns{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:26px;
+
+  margin-top:40px;
+}
+
+
+
+.memory-column{
+
+  display:contents;
+}
+
+
+
+.memory-card{
+
+  width:min(100%, 520px);
+
+  background:
+  rgba(255,255,255,0.68);
+
+  border-radius:30px;
+
+  padding:22px;
+
+  position:relative;
+
+  overflow:hidden;
+
+  transition:
+  transform .3s ease,
+  box-shadow .3s ease;
+
+  box-shadow:
+  0 12px 30px rgba(0,0,0,0.05);
+}
+
+
+
+.memory-card:nth-child(odd){
+
+  margin-right:auto;
+}
+
+.memory-card:nth-child(even){
+
+  margin-left:auto;
+}
+
+
+
+.memory-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:5px;
+
+  background:
+  linear-gradient(
+    90deg,
+    #9fd0ff,
+    #c8e7ff
+  );
+}
+
+
+
+.memory-card:hover{
+
+  transform:
+  translateY(-4px)
+  rotate(-0.4deg);
+
+  box-shadow:
+  0 20px 48px rgba(0,0,0,0.11);
+}
+
+
+.memory-photo{
+
+  width:100%;
+
+  height:auto;
+
+  display:block;
+
+  border-radius:20px;
+
+  margin-bottom:18px;
+
+  object-fit:contain;
+
+  box-shadow:
+  0 10px 25px rgba(0,0,0,0.08);
+}
+
+.memory-card img{
+
+  image-rendering:auto;
+}
+
+
+
+.memory-date{
+
+  color:#8eb6dc;
+
+  font-size:0.82rem;
+
+  letter-spacing:1px;
+}
+
+
+
+.memory-card h3{
+
+  margin-top:10px;
+  margin-bottom:10px;
+
+  font-size:2rem;
+
+  line-height:1;
+
+  color:#5d84b1;
+
+  font-family:'Caveat', cursive;
+}
+
+
+
+.memory-card p{
+
+  margin-top:0;
+
+  line-height:1.75;
+
+  color:#6d89a9;
+
+  font-size:1rem;
+
+  white-space:pre-line;
+}
+
+
+
+.song-card{
+
+  margin-top:18px;
+
+  background:
+  rgba(255,255,255,0.72);
+
+  border-radius:22px;
+
+  padding:14px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:12px;
+
+  box-shadow:
+  0 8px 20px rgba(0,0,0,0.04);
+}
+
+.song-card img{
+
+  width:100%;
+
+  display:block;
+
+  border-radius:16px;
+}
+
+.song-info span{
+
+  color:#8eb6dc;
+
+  font-size:.78rem;
+
+  letter-spacing:1px;
+}
+
+.song-info h4{
+
+  margin:4px 0 0 0;
+
+  font-size:1.15rem;
+
+  color:#5d84b1;
+
+  font-family:'Caveat', cursive;
+}
+
+.song-card audio{
+
+  width:100%;
+
+  height:42px;
+
+  opacity:.92;
+}
+
+
+.song-text{
+
+  margin-top:10px;
+
+  line-height:1.7;
+
+  color:#6d89a9;
+
+  font-size:.97rem;
+}
+
+
+
+.final-text{
+
+  margin:50px auto 0 auto;
+
+  max-width:920px;
+
+  padding:20px 28px;
+
+  text-align:center;
+
+  font-size:1.28rem;
+
+  line-height:2;
+
+  color:#6d89a9;
+}
+
+.final-text p{
+
+  margin:0;
+
+  line-height:2;
+
+  color:#6d89a9;
+
+  font-size:1.12rem;
+
+  white-space:pre-line;
+}
+
+
+
+@keyframes fadeUp{
+
+  from{
+
+    opacity:0;
+
+    transform:
+    translateY(20px);
+
+    filter:
+    blur(8px);
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+    translateY(0px);
+
+    filter:
+    blur(0px);
+  }
+}
+
+
+
+@media(max-width:768px){
+
+  .hero{
+
+    padding:35px 14px;
+  }
+
+  .hero-card{
+
+    padding:26px;
+  }
+
+  .hero-card h1{
+
+    font-size:3.5rem;
+  }
+
+  .memory-card{
+
+    width:100%;
+  }
+
+  .memory-card:nth-child(even),
+  .memory-card:nth-child(odd){
+
+    margin-left:0;
+    margin-right:0;
+  }
+
+  .final-text{
+
+    text-align:left;
+  }
+}
+
+.final-photo{
+
+  width:100%;
+
+  max-width:520px;
+
+  display:block;
+
+  margin:28px auto;
+
+  border-radius:24px;
+
+  box-shadow:
+  0 12px 30px rgba(0,0,0,0.10);
+
+  object-fit:cover;
+
+  transition:
+  transform .3s ease,
+  box-shadow .3s ease;
+}
+
+.final-photo:hover{
+
+  transform:
+  scale(1.015);
+
+  box-shadow:
+  0 18px 40px rgba(0,0,0,0.14);
+}
+
+
+
+.hero-card{
+
+  animation:
+  fadePage 1s ease;
+}
+
+
+
+.mini,
+.hero-card h1,
+.hero-card > p,
+.memory-card,
+.final-text{
+
+  opacity:0;
+
+  animation:
+  fadeUp .9s ease forwards;
+}
+
+
+
+.mini{
+  animation-delay:.1s;
+}
+
+.hero-card h1{
+  animation-delay:.2s;
+}
+
+.hero-card > p{
+  animation-delay:.35s;
+}
+
+
+
+.memory-card:nth-child(1){
+  animation-delay:.45s;
+}
+
+.memory-card:nth-child(2){
+  animation-delay:.60s;
+}
+
+.memory-card:nth-child(3){
+  animation-delay:.75s;
+}
+
+.memory-card:nth-child(4){
+  animation-delay:.90s;
+}
+
+.memory-card:nth-child(5){
+  animation-delay:1.05s;
+}
+
+.memory-card:nth-child(6){
+  animation-delay:1.20s;
+}
+
+
+
+.final-text{
+  animation-delay:1.35s;
+}
+
+
+
+.final-photo{
+
+  opacity:0;
+
+  animation:
+  fadeImage 1.2s ease forwards;
+
+  animation-delay:1.5s;
+}
+
+
+
+@keyframes fadePage{
+
+  from{
+
+    opacity:0;
+  }
+
+  to{
+
+    opacity:1;
+  }
+}
+
+@keyframes fadeUp{
+
+  from{
+
+    opacity:0;
+
+    transform:
+    translateY(28px);
+
+    filter:
+    blur(8px);
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+    filter:
+    blur(0);
+  }
+}
+
+@keyframes fadeImage{
+
+  from{
+
+    opacity:0;
+
+    transform:
+    scale(.96);
+
+    filter:
+    blur(10px);
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+    scale(1);
+
+    filter:
+    blur(0);
+  }
+}
