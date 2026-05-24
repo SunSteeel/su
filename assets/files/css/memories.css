@@ -426,213 +426,153 @@ body{
 
 
 
+/* MOBILE FIX */
+
+html,
+body{
+
+  width:100%;
+
+  max-width:100%;
+
+  overflow-x:hidden;
+}
+
+
+/* evita qualquer elemento empurrar pro lado */
+
+*{
+
+  box-sizing:border-box;
+}
+
+
+/* card principal */
+
+.hero{
+
+  width:100%;
+
+  overflow-x:hidden;
+}
+
+.hero-card{
+
+  width:100%;
+
+  max-width:920px;
+
+  overflow:hidden;
+}
+
+
+/* glow não invade lateral */
+
+.hero-card::before{
+
+  width:280px;
+  height:280px;
+
+  top:-90px;
+  right:-90px;
+
+  box-shadow:
+  0 0 100px 50px #c7e5ff;
+}
+
+
+/* imagens nunca passam da tela */
+
+img{
+
+  max-width:100%;
+
+  height:auto;
+
+  display:block;
+}
+
+
+/* MOBILE */
+
 @media(max-width:768px){
 
   .hero{
 
-    padding:35px 14px;
+    padding:18px 10px;
   }
 
   .hero-card{
 
-    padding:26px;
+    padding:20px;
+
+    border-radius:28px;
   }
 
   .hero-card h1{
 
-    font-size:3.5rem;
+    font-size:2.8rem;
+
+    line-height:.95;
+  }
+
+  .hero-card > p{
+
+    font-size:.95rem;
+  }
+
+  .memory-columns{
+
+    gap:18px;
   }
 
   .memory-card{
 
     width:100%;
+
+    margin:0 !important;
+
+    padding:18px;
+
+    border-radius:22px;
   }
 
-  .memory-card:nth-child(even),
-  .memory-card:nth-child(odd){
+  .memory-card h3{
 
-    margin-left:0;
-    margin-right:0;
+    font-size:1.7rem;
+  }
+
+  .memory-card p{
+
+    font-size:.95rem;
+
+    line-height:1.65;
+  }
+
+  .song-card{
+
+    padding:12px;
   }
 
   .final-text{
 
+    width:100%;
+
+    padding:12px 6px;
+
     text-align:left;
-  }
-}
 
-.final-photo{
-
-  width:100%;
-
-  max-width:520px;
-
-  display:block;
-
-  margin:28px auto;
-
-  border-radius:24px;
-
-  box-shadow:
-  0 12px 30px rgba(0,0,0,0.10);
-
-  object-fit:cover;
-
-  transition:
-  transform .3s ease,
-  box-shadow .3s ease;
-}
-
-.final-photo:hover{
-
-  transform:
-  scale(1.015);
-
-  box-shadow:
-  0 18px 40px rgba(0,0,0,0.14);
-}
-
-
-
-.hero-card{
-
-  animation:
-  fadePage 1s ease;
-}
-
-
-
-.mini,
-.hero-card h1,
-.hero-card > p,
-.memory-card,
-.final-text{
-
-  opacity:0;
-
-  animation:
-  fadeUp .9s ease forwards;
-}
-
-
-
-.mini{
-  animation-delay:.1s;
-}
-
-.hero-card h1{
-  animation-delay:.2s;
-}
-
-.hero-card > p{
-  animation-delay:.35s;
-}
-
-
-
-.memory-card:nth-child(1){
-  animation-delay:.45s;
-}
-
-.memory-card:nth-child(2){
-  animation-delay:.60s;
-}
-
-.memory-card:nth-child(3){
-  animation-delay:.75s;
-}
-
-.memory-card:nth-child(4){
-  animation-delay:.90s;
-}
-
-.memory-card:nth-child(5){
-  animation-delay:1.05s;
-}
-
-.memory-card:nth-child(6){
-  animation-delay:1.20s;
-}
-
-
-
-.final-text{
-  animation-delay:1.35s;
-}
-
-
-
-.final-photo{
-
-  opacity:0;
-
-  animation:
-  fadeImage 1.2s ease forwards;
-
-  animation-delay:1.5s;
-}
-
-
-
-@keyframes fadePage{
-
-  from{
-
-    opacity:0;
+    font-size:1rem;
   }
 
-  to{
+  .final-photo{
 
-    opacity:1;
-  }
-}
+    width:100%;
 
-@keyframes fadeUp{
+    max-width:100%;
 
-  from{
+    margin:22px auto;
 
-    opacity:0;
-
-    transform:
-    translateY(28px);
-
-    filter:
-    blur(8px);
-  }
-
-  to{
-
-    opacity:1;
-
-    transform:
-    translateY(0);
-
-    filter:
-    blur(0);
-  }
-}
-
-@keyframes fadeImage{
-
-  from{
-
-    opacity:0;
-
-    transform:
-    scale(.96);
-
-    filter:
-    blur(10px);
-  }
-
-  to{
-
-    opacity:1;
-
-    transform:
-    scale(1);
-
-    filter:
-    blur(0);
+    border-radius:18px;
   }
 }
